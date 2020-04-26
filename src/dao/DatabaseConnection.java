@@ -41,7 +41,7 @@ public class DatabaseConnection {
 	    }
 	    catch (Exception e)
 	    {
-	      System.err.println("Got an exception!");
+	      System.err.println("Got an exception to db!");
 	      System.err.println(e.getMessage());
 	    }
 	}
@@ -75,7 +75,7 @@ public class DatabaseConnection {
 		    }
 		      catch (Exception e)
 			    {
-			      System.err.println("Got an exception!");
+			      System.err.println("Got an exception from db!");
 			      System.err.println(e.getMessage());
 			    }
 				return OtpFromDb;
@@ -115,7 +115,7 @@ public class DatabaseConnection {
 			    }
 			      catch (Exception e)
 				    {
-				      System.err.println("Got an exception!");
+				      System.err.println("Got an exception cert exception from db!");
 				      System.err.println(e.getMessage());
 				    }
 					return CertFromDb;
@@ -141,7 +141,7 @@ public class DatabaseConnection {
 		    }
 		    catch (Exception e)
 		    {
-		      System.err.println("Got an exception!");
+		      System.err.println("Got an exception key to db!");
 		      System.err.println(e.getMessage());
 		    }
 		}
