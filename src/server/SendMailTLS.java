@@ -16,7 +16,7 @@ public class SendMailTLS {
     public static String sendEmail(String fromAddr, String toAddr) throws IOException {
 
         final String username = "otpsender247@gmail.com";
-        final String password = "OTPSender@247";
+        final String password = "xxxxxxxxx";
 
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
@@ -56,7 +56,8 @@ public class SendMailTLS {
 
 
         } catch (MessagingException e) {
-            throw new RuntimeException(e);
+		System.out.println ("The Exception send mail is "+e.toString() );
+        	throw new RuntimeException(e);
         }
 
 

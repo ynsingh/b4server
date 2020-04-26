@@ -3,13 +3,21 @@
               Any modifications will be overwritten.
               To include a user specific buildfile here, simply create one in the same
               directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. --><project basedir="." default="build" name="b4server">
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="b4server">
     <property environment="env"/>
     <property name="ECLIPSE_HOME" value="D:/eclipse/eclipse/"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.8"/>
     <property name="source" value="1.8"/>
     <path id="Web App Libraries.libraryclasspath">
+	 <pathelement location="WEB-INF/lib/bcpg-jdk15on-161.jar"/>
+        <pathelement location="WEB-INF/lib/bcprov-ext-jdk15on-161.jar"/>
+        <pathelement location="WEB-INF/lib/bctest-jdk15on-161.jar"/>
+        <pathelement location="WEB-INF/lib/bcmail-jdk15on-161.jar"/>
+        <pathelement location="WEB-INF/lib/bcpkix-jdk15on-161.jar"/>
+        <pathelement location="WEB-INF/lib/bcprov-jdk15on-161.jar"/>
+        <pathelement location="WEB-INF/lib/bctls-jdk15on-161.jar"/>
         <pathelement location="WEB-INF/lib/activation.jar"/>
         <pathelement location="WEB-INF/lib/commons-email-1.4.jar"/>
         <pathelement location="WEB-INF/lib/javax.mail.jar"/>
