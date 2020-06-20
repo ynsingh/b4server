@@ -5,6 +5,7 @@ import java.util.Calendar;
 import java.util.Hashtable;
 import java.util.Vector;
 import dao.DatabaseConnection;
+import java.io.FileWriter;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.security.SignatureException;
@@ -44,7 +45,7 @@ public class GenerateCertificate {
     static final char[] keyPass = password.toCharArray();
 	public static PrivateKey privKey;
 	static KeyPair keypair = null;
-    static X509Certificate createSelfSignedCert()throws Exception {
+    public static X509Certificate createSelfSignedCert()throws Exception {
     		Security.addProvider(new org.bouncycastle.jce.provider.BouncyCastleProvider());
     		try{
     			KeyStore keyStore = null;
@@ -111,14 +112,15 @@ public class GenerateCertificate {
             adam.SaveKeyPair(path, keypair);
             //keypair.generate(1024);
             try {
-            	DatabaseConnection.keytoDb("null", Emailid, sprivate, pubKey, validity ,organizationalUnit, organization, city, state, country,alias1, keyPass);
-            } catch (ClassNotFoundException e2) {
+                FileWriter myWriter = new FileWriter("key.txt");
+                myWriter.write(sprivate);
+                myWriter.close();
+
+            	//DatabaseConnection.keytoDb("null", Emailid, pubKey, validity ,organizationalUnit, organization, city, state, country,null);
+            } catch (Exception e2) {
             	// TODO Auto-generated catch block
             	e2.printStackTrace();
-            } catch (SQLException e2) {
-            	// TODO Auto-generated catch block
-            	e2.printStackTrace();
-            }       
+            }        
         X509Certificate[] chain = new X509Certificate[1];
         try {
         	chain[0] = x500Name.generateX509Certificate(privKey, "BC");

@@ -5,6 +5,9 @@ import java.sql.DriverManager;
 
 
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import server.GenerateCertificate;
 
 
 public class test {
@@ -15,6 +18,13 @@ public class test {
 		
 		
 Class.forName("com.mysql.jdbc.Driver");
-Connection con= DriverManager.getConnection("jdbc:mysql://192.168.1.8:3306/jdbc_example","root","1234");
+Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/b4server_master","root","");
 System.out.println(con);
+
+            try {
+                //GenerateCertificate.createSelfSignedCert();
+                DatabaseConnection.PrivkeyfromFile(null);
+            } catch (Exception ex) {
+                Logger.getLogger(test.class.getName()).log(Level.SEVERE, null, ex);
+            }
 	}}
