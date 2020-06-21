@@ -54,7 +54,7 @@ public class DatabaseConnection
 	    }
 	    catch (Exception e)
 	    {
-	      System.err.println("Got an exception!");
+	      System.err.println("Got an exception to db!");
 	      System.err.println(e.getMessage());
               Connection conn = connect_database();
               PreparedStatement st = conn.prepareStatement(" UPDATE otp SET otp=? WHERE emailid=?");
@@ -99,7 +99,7 @@ public class DatabaseConnection
 		    }
 		      catch (Exception e)
 			    {
-			      System.err.println("Got an exception!");
+			      System.err.println("Got an exception from db!");
 			      System.err.println(e.getMessage());
 			    }
 				return OtpFromDb;
@@ -124,7 +124,7 @@ public class DatabaseConnection
 	    }
 	    catch (Exception e)
 	    {
-	      System.err.println("Got an exception!");
+	      System.err.println("Got an exception keystore otp!");
 	      System.err.println(e.getMessage());
 	    }
 	}
@@ -167,7 +167,7 @@ public class DatabaseConnection
 			    }
 			      catch (Exception e)
 				    {
-				      System.err.println("Got an exception!");
+				      System.err.println("Got an exception cert from db!");
 				      System.err.println(e.getMessage());
 				    }
 					return CertFromDb;
@@ -197,7 +197,7 @@ public class DatabaseConnection
 		    }
 		    catch (Exception e)
 		    {
-		      System.err.println("Got an exception!");
+		      System.err.println("Got an exception key to db!");
 		      System.err.println(e.getMessage());
 		    }
 		}
@@ -227,7 +227,7 @@ public class DatabaseConnection
 		    }
 		    catch (Exception e)
 		    {
-		      System.err.println("Got an exception!");
+		      System.err.println("Got an exception keystore to db!");
 		      System.out.println(e.getMessage());
                       e.printStackTrace();
 		    }
@@ -259,7 +259,7 @@ public class DatabaseConnection
 			    }
 			      catch (Exception e)
 				    {
-				      System.err.println("Got an exception!");
+				      System.err.println("Got an exception keystore from db!");
 				      System.err.println(e.getMessage());
 				    }
 					return servercertificate+":::::::"+clientcertificate;
@@ -281,7 +281,7 @@ public class DatabaseConnection
                     }
                     catch (Exception e)
                     {
-                        System.err.println("Got an exception!");
+                        System.err.println("Got an exception check key store!");
                         System.err.println(e.getMessage());
                     }
                     return flag;
@@ -313,7 +313,7 @@ public class DatabaseConnection
 		    }
 		    catch (Exception e)
 		    {
-		      System.err.println("Got an exception!");
+		      System.err.println("Got an exception keystore delete!");
 		      System.err.println(e.getMessage());
 		    }
 		}
@@ -341,7 +341,7 @@ public class DatabaseConnection
 		    }
 		    catch (Exception e)
 		    {
-		      System.err.println("Got an exception!");
+		      System.err.println("Got an exception lr date to db!");
 		      System.err.println(e.getMessage());
 		    }
 		}
@@ -372,7 +372,7 @@ public class DatabaseConnection
 		    }
 		    catch (Exception e)
 		    {
-		      System.err.println("Got an exception!");
+		      System.err.println("Got an exception jks to db!");
 		      System.err.println(e.getMessage());
 		    }
 		}
@@ -407,7 +407,7 @@ public class DatabaseConnection
 			    }
 			      catch (Exception e)
 				    {
-				      System.err.println("Got an exception!");
+				      System.err.println("Got an exception jks from db!");
 				      System.err.println(e.getMessage());
 				    }
 				    return jks;	
@@ -430,7 +430,7 @@ public class DatabaseConnection
                     }
                     catch (Exception e)
                     {
-                        System.err.println("Got an exception!");
+                        System.err.println("Got an exception check crl!");
                         System.err.println(e.getMessage());
                     }
                     return flag;
@@ -463,8 +463,9 @@ public class DatabaseConnection
 		    }
 		    catch (Exception e)
 		    {
-                        e.printStackTrace();
-		     // System.out.println(e.printStackTrace());
+                        System.err.println("Got an exception crl to db!");
+                        System.err.println(e.getMessage());
+		    //  System.out.println(e.printStackTrace());
 		    }
 		}
                 /*
@@ -498,7 +499,7 @@ public class DatabaseConnection
 			    }
 			      catch (Exception e)
 				    {
-				      System.err.println("Got an exception!");
+				      System.err.println("Got an exception crl verify email!");
 				      System.err.println(e.getMessage());
 				    }
 				    return flag;	
@@ -528,7 +529,7 @@ public class DatabaseConnection
 	    }
 	    catch (Exception e)
 	    {
-	      System.err.println("Got an exception!");
+	      System.err.println("Got an exception crl update cert!");
 	      System.err.println(e.getMessage());
 	    }
 	}
@@ -596,7 +597,7 @@ public class DatabaseConnection
 			    }
 			      catch (Exception e)
 				    {
-				      System.err.println("Got an exception in database");
+				      System.err.println("Got an exception in database priv key from db");
 				      e.printStackTrace(System.out);
 				      System.err.println("M "+ e.getMessage());
 				    }
@@ -646,7 +647,7 @@ public class DatabaseConnection
 			    }
 			      catch (Exception e)
 				    {
-				      System.err.println("Got an exception in file");
+				      System.err.println("Got an exception in file priv key from file");
 				      e.printStackTrace(System.out);
 				      System.err.println("M "+ e.getMessage());
 				    }
@@ -675,7 +676,7 @@ public class DatabaseConnection
 		    }
 		    catch (Exception e)
 		    {
-		      System.err.println("Got an exception!");
+		      System.err.println("Got an exception multi device entry!");
 		      System.out.println(e.getMessage());
                       e.printStackTrace();
 		    }

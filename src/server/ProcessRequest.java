@@ -92,8 +92,8 @@ public class ProcessRequest extends HttpServlet {
                 //master get the own ip .
                 //how to get ip of ms and hardcoded ip getting from property file.
 
-                String msip = "http://202.141.40.218:8443/brihaspati4_mserver";//**existing msip for brashpati****
-                //String msip = "http://localhost:8084/b4server";//** updated msip**** confirm***
+//                String msip = "http://202.141.40.218:8443/brihaspati4_mserver";//**existing msip for brashpati****
+                String msip = "http://localhost:8080/b4server";//** updated msip**** confirm***
                 // make the hash of (ip of ms + received random key).
 
                 String hsh_strng = msip + rkey;
@@ -222,7 +222,7 @@ public class ProcessRequest extends HttpServlet {
                     String ServerCertbyte = DatabaseConnection.CertfromDb("b4server@iitk.ac.in");
                     X509Certificate[] servercert =	ConvertStringCertToX509.convertToX509Certarray(ServerCertbyte);
                     System.out.println("the server cert " + servercert[0].toString());
-                    String path = "C:\\tmp";
+//                    String path = "C:\\tmp";
                     keystore_save adam = new keystore_save();
                     //PrivateKey ServerPrivate = DatabaseConnection.PrivkeyfromFile(getServletContext().getRealPath("/WEB-INF/key.txt"));
                     PrivateKey ServerPrivate = DatabaseConnection.PrivkeyfromDb("b4server@iitk.ac.in");
