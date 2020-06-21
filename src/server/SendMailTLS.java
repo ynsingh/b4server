@@ -63,7 +63,7 @@ public class SendMailTLS {
 
     }
 
-    static char[] generateOTP(int len)
+    public static char[] generateOTP(int len)
     {
         //Generating OTP using numeric values
 
