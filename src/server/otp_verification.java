@@ -138,10 +138,10 @@ public class otp_verification extends HttpServlet {
                     String ServerCertbyte = DatabaseConnection.CertfromDb("b4server@iitk.ac.in");
                     X509Certificate[] servercert =	ConvertStringCertToX509.convertToX509Certarray(ServerCertbyte);
                     System.out.println("the server cert " + servercert[0].toString());
-                    String path = "C:\\tmp";
+        //            String path = "C:\\tmp";
                     keystore_save adam = new keystore_save();
-                    PrivateKey ServerPrivate = DatabaseConnection.PrivkeyfromFile(getServletContext().getRealPath("/WEB-INF/key.txt"));
-                    //PrivateKey ServerPrivate = DatabaseConnection.PrivkeyfromDb("b4server@iitk.ac.in");
+            //        PrivateKey ServerPrivate = DatabaseConnection.PrivkeyfromFile(getServletContext().getRealPath("/WEB-INF/key.txt"));
+                    PrivateKey ServerPrivate = DatabaseConnection.PrivkeyfromDb("b4server@iitk.ac.in");
                     //System.out.println("ServerPrivate"+ ServerPrivate);
                     //System.out.println("Otp successfully verified " );
                     //create signed client certificate
